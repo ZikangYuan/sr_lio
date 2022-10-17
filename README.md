@@ -99,4 +99,29 @@ Then open the terminal in the path of the bag file, and type:
 rosbag play XXX.bag --clock -d 1.0 -r 0.2 
 ```
 
-### 2. Run on 
+### 2. Run on [*UTBM*](https://epan-utbm.github.io/utbm_robocar_dataset/#Downloads)
+
+Before evaluating on *UTBM* dataset, a dependency needs to be installed. If your OS are Ubuntu 16.04, please type:
+
+```bash
+sudo apt-get install ros-kinetic-velodyne 
+```
+
+If your OS are Ubuntu 18.04, please type:
+
+```bash
+sudo apt-get install ros-melodic-velodyne 
+```
+
+Then open the terminal in the path of SR-LIO, and type:
+
+```bash
+sourcr devel/setup.bash
+roslaunch sr_lio lio_utbm.launch
+```
+
+Then open the terminal in the path of the bag file, and type:
+
+```bash
+rosbag play XXX.bag --clock -d 1.0 -r 0.2 
+```
