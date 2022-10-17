@@ -26,7 +26,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 </div>
 
 **New Features:**
-1. The proposed **Sweep Reconstruction** module splits the original sweep packet into continuous point cloud data streams, and then re-packages point cloud data streams in a multiplexing way to obtain sweeps with higher frequency.
+1. The proposed **Sweep Reconstruction** module splits the original sweep packet into continuous point cloud data streams, and then re-packages point cloud data streams in a multiplexing way to obtain sweeps with higher frequency, which is **illustrated by the figure as follow**:
 <div align="center">
 <img src="doc/sweep_reconstruction.png" width=99% />
 </div>
