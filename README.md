@@ -59,13 +59,14 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 
 ```bash
 mkdir -p ~/SR-LIO/src
-cd SR-LIO
+cd SR-LIO/src
 ```
 
 ### Step 1: Clone the directory and build
 
 ```bash
 git clone https://github.com/ZikangYuan/sr_lio.git
+cd ..
 catkin_make
 sourcr devel/setup.bash
 ```
