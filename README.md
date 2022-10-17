@@ -36,7 +36,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 
 ## Installation
 
-### Requirements
+### 1. Requirements
 
 > GCC >= 5.4.0
 >
@@ -55,14 +55,14 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 | Ubuntu 16.04 | 5.4.0  | 3.16.0 | 3.2.8 | 1.7 | 1.14 |
 | Ubuntu 18.04 | 7.5.0  | 3.11.2 | 3.3.4 | 1.8 | 1.14 |
 
-### Step 0: Create ROS workspace
+### 2. Create ROS workspace
 
 ```bash
 mkdir -p ~/SR-LIO/src
 cd SR-LIO/src
 ```
 
-### Step 1: Clone the directory and build
+### 3. Clone the directory and build
 
 ```bash
 git clone https://github.com/ZikangYuan/sr_lio.git
@@ -70,3 +70,6 @@ cd ..
 catkin_make
 sourcr devel/setup.bash
 ```
+## Run on Publich Datasets
+
+###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
