@@ -158,5 +158,10 @@ rosbag play XXX.bag --clock -d 1.0 -r 0.2
 
 The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the Table VII of our article to select the "-r" parameter.**
 
+## Citation
 
+If you use our work in your research project, please consider citing:
 
+## 6.Acknowledgments
+
+Thanks for [CT-ICP](https://github.com/jedeschaud/ct_icp), [Fast-LIO](https://github.com/hku-mars/FAST_LIO), [VINs-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) and [Open-VINs](https://github.com/vell001/open_vins).
