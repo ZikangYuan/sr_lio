@@ -11,6 +11,8 @@
 
 ## Demo Video (2022-10-17 Update)
 
+The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the **Resulted Global Map and Trajectory** on sequence *nclt_2013-01-10* (right)
+
 <div align="left">
 <img src="doc/running.gif" width=49.6% />
 <img src="doc/result.gif" width = 49.6% >
