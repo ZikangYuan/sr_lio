@@ -47,6 +47,8 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 > [PCL](https://pointclouds.org/downloads/) == 1.7 for Ubuntu 16.04, and == 1.8 for Ubuntu 18.04
 >
 > [Ceres](http://ceres-solver.org/installation.html) >= 1.14
+>
+> [ROS](http://wiki.ros.org/ROS/Installation)
 
 ##### Have Tested On:
 
