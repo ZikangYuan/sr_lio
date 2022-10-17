@@ -156,28 +156,7 @@ rosbag play XXX.bag --clock -d 1.0 -r 0.2
 
 **-r** is used to control the rosbag playback speed. For example, when we set **-r 0.2**, the playback speed of this operation is 1/5 of the original data acquisition rate. Theoretically, when the input LiDAR sweeps are reconstituted from 10 Hz to 30 Hz, we need to complete the processing of a sweep within (1000/30)ms. However, our system could not achieve such excellent computational efficiency on existing hardware platforms. By slowing down the playback of rosbag packets, we can give our system more time to process each sweep.
 
-The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the table to select the "-r" parameter.**
+The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the Table VII of our article to select the "-r" parameter.**
 
-| Sequence | Regist-Iter  | Time Consumption/Per Sweep (ms) | ATE (m) |
-| -------- | ------------ | ------------------------------- | ------- |
-| *nclt_2012-01-08* | 5.4.0  | 3.16.0 | 3.2.8 |
-| *nclt_2012-01-15* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2012-02-02* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2012-04-29* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2012-05-11* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2012-06-15* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2012-12-01* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2013-01-10* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *nclt_2013-04-05* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2018-07-19* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2019-01-31* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2019-04-18* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2018-07-20* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2018-07-17* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2018-07-16* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *utbm_2018-07-13* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *ulhk_HK-Data-2019-01-17* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *ulhk_HK-Data-2019-03-16-1* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *ulhk_HK-Data-2019-03-17* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *ulhk_HK-Data-2019-04-26-1* | 7.5.0  | 3.11.2 | 3.3.4 |
-| *ulhk_HK-Data-2019-04-26-2* | 7.5.0  | 3.11.2 | 3.3.4 |
+
+
