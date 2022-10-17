@@ -170,6 +170,6 @@ The most significant parameters affecting the efficiency of our system are the r
 
 If you use our work in your research project, please consider citing:
 
-## 6.Acknowledgments
+## Acknowledgments
 
 Thanks for [CT-ICP](https://github.com/jedeschaud/ct_icp), [Fast-LIO](https://github.com/hku-mars/FAST_LIO), [VINs-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) and [Open-VINs](https://github.com/vell001/open_vins).
