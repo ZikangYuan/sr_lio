@@ -125,3 +125,27 @@ Then open the terminal in the path of the bag file, and type:
 ```bash
 rosbag play XXX.bag --clock -d 1.0 -r 0.2 
 ```
+
+### 3. Run on [*ULHK*](https://github.com/weisongwen/UrbanLoco)
+
+For sequence *HK-Data-2019-01-17* and *HK-Data-2019-03-17*, the imu data does not include the gravity acceleration component, and the topic of LiDAR point cloud data is */velodyne_points_0*. For other sequences of *ULHK* used by us, the imu data includes the gravity acceleration component, and the topic of LiDAR point cloud data is */velodyne_points*. Therefore, we provide two launch files for the *ULHK* dataset.
+
+If you test SR-LIO on *HK-Data-2019-01-17* or *HK-Data-2019-03-17*, please type:
+
+```bash
+sourcr devel/setup.bash
+roslaunch sr_lio lio_ulhk1.launch
+```
+
+If you test SR-LIO on *HK-Data-2019-03-16-1*, *HK-Data-2019-04-26-1* or *HK-Data-2019-04-26-2*, please type:
+
+```bash
+sourcr devel/setup.bash
+roslaunch sr_lio lio_ulhk2.launch
+```
+
+Then open the terminal in the path of the bag file, and type:
+
+```bash
+rosbag play XXX.bag --clock -d 1.0 -r 0.2 
+```
