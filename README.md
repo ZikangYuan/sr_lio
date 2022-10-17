@@ -158,3 +158,26 @@ rosbag play XXX.bag --clock -d 1.0 -r 0.2
 
 The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the table to select the "-r" parameter.**
 
+| Sequence | Regist-Iter  | Time Consumption/Per Sweep (ms) | ATE (m) |
+| -------- | ------------ | ------------------------------- | ------- |
+| *nclt_2012-01-08* | 5.4.0  | 3.16.0 | 3.2.8 |
+| *nclt_2012-01-15* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2012-02-02* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2012-04-29* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2012-05-11* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2012-06-15* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2012-12-01* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2013-01-10* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *nclt_2013-04-05* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2018-07-19* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2019-01-31* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2019-04-18* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2018-07-20* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2018-07-17* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2018-07-16* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *utbm_2018-07-13* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *ulhk_HK-Data-2019-01-17* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *ulhk_HK-Data-2019-03-16-1* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *ulhk_HK-Data-2019-03-17* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *ulhk_HK-Data-2019-04-26-1* | 7.5.0  | 3.11.2 | 3.3.4 |
+| *ulhk_HK-Data-2019-04-26-2* | 7.5.0  | 3.11.2 | 3.3.4 |
