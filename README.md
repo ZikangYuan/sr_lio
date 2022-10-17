@@ -83,6 +83,8 @@ D. When SR-LIO is running, the estimated pose is recorded in real time in the **
 
 E. If you want to get some visualization of the split and recombine, please set the **debug_output** parameter in the launch file to 1 (true). After that, you can get some .pcd files in **output/cloud_frame** and **output/cut_sweep** folders.
 
+F. As the groundtruth acquisition of some datasets (*UTBM* and *ULHK*) are extremely complicated, in order to facilitate evaluation, **we store the pose ground truth of the three datasets used by us in the "GT" folder**.
+
 ###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
 
 ```bash
@@ -96,3 +98,5 @@ Then open the terminal in the path of the bag file, and type:
 ```bash
 rosbag play XXX.bag --clock -d 1.0 -r 0.2 
 ```
+
+### 2. Run on 
