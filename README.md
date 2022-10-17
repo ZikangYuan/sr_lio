@@ -18,6 +18,4 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 <img src="doc/result.gif" width = 49.6% >
 </div>
 
-**Watch the full high-definition (HD) video on youtu**:
-1. [Real-Time Performance](https://youtu.be/KYGFNe-8On4)
-2. [Global Map and Trajectory](https://youtu.be/7XpBDc41uUA)
+**Related video:**: [Real-Time Performance](https://youtu.be/KYGFNe-8On4), [Global Map and Trajectory](https://youtu.be/7XpBDc41uUA)
