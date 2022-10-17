@@ -1,13 +1,13 @@
+# SR-LIO
+**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is a accurate and robust LiDAR-inertial odometry (LIO) package that can adjust the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency for shortening the time period of IMU pre-integration, so as to reduce the error of IMU preintegration. The main contributions of our package are as follow:
+1. We propose a sweep reconstruction method, which can increase the frequency of spinning LiDAR sweeps and reduce the error of IMU pre-integration in LIO systems;
+2. We embed the proposed sweep reconstruction method into our newly designed BA based LIO system and achieve the stateof-the-art accuracy;
+
 ## Related Works
 
 1. [CT-ICP](https://github.com/jedeschaud/ct_icp): A state-of-the-art LiDAR odometry.
 2. [VINs-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono): A state-of-the-art as bundle adjustment (BA) based visual-inertial odometry.
 3. [Open_VINs](https://github.com/vell001/open_vins): A robust, real-time LiDAR-IMU initialization method without motion excitation.
-
-# SR-LIO
-**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is a accurate and robust LiDAR-inertial odometry (LIO) package that can adjust the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency for shortening the time period of IMU pre-integration, so as to reduce the error of IMU preintegration. The main contributions of our package are as follow:
-1. We propose a sweep reconstruction method, which can increase the frequency of spinning LiDAR sweeps and reduce the error of IMU pre-integration in LIO systems;
-2. We embed the proposed sweep reconstruction method into our newly designed BA based LIO system and achieve the stateof-the-art accuracy;
 
 ## Demo Video (2022-10-17 Update)
 
@@ -34,3 +34,24 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
 3. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **SR-LIO** represents the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
 4. **SR-LIO** proposes **Multi-Segment LIO Optimization** for equally optimize all state variables during the period of a reconstructed sweep.
+
+## Installation
+
+### Requirements
+
+> GCC >= 5.4.0
+>
+> Cmake >= 3.0.2
+> 
+> Eigen3 >= 3.2.8
+>
+> PCL >= 1.7
+>
+> Ceres >= 1.14
+
+##### Have Tested On:
+
+| OS    | GCC  | Cmake | Eigen3 | PCL | Ceres |
+| ----- | ---- | ----- | ------ | --- | ----- |
+| Ubuntu 16.04 | 5.4.0  | 3.16.0 | 3.2.8 | 1.7 | 1.14 |
+| Ubuntu 18.04 | 7.5.0  | 3.11.2 | 3.3.4 | 1.8 | 1.14 |
