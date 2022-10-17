@@ -149,3 +149,10 @@ Then open the terminal in the path of the bag file, and type:
 ```bash
 rosbag play XXX.bag --clock -d 1.0 -r 0.2 
 ```
+
+### 4. Adjustment of "-r" when play rosbag
+
+**-r** is used to control the rosbag playback speed. For example, when we set **-r 0.2**, the playback speed of this operation is 1/5 of the original data acquisition rate. Theoretically, when the input LiDAR sweeps are reconstituted from 10 Hz to 30 Hz, we need to complete the processing of a sweep within (1000/30)ms. However, our system could not achieve such excellent computational efficiency on existing hardware platforms. By slowing down the playback of rosbag packets, we can give our system more time to process each sweep.
+
+The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the table to select the "-r" parameter.**
+
