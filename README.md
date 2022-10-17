@@ -21,3 +21,12 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 **Related video:**: [Real-Time Performance](https://youtu.be/KYGFNe-8On4), [Global Map and Trajectory](https://youtu.be/7XpBDc41uUA)
 
 **Pipeline:**
+<div align="center">
+<img src="doc/framework-sr_lio.png" width=99% />
+</div>
+
+**New Features:**
+1. The proposed **Sweep Reconstruction** module splits the original sweep packet into continuous point cloud data streams, and then re-packages point cloud data streams in a multiplexing way to obtain sweeps with higher frequency.
+<div align="center">
+<img src="doc/sweep_reconstruction.png" width=99% />
+</div>
