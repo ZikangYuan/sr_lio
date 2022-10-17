@@ -68,8 +68,19 @@ cd SR-LIO/src
 git clone https://github.com/ZikangYuan/sr_lio.git
 cd ..
 catkin_make
-sourcr devel/setup.bash
 ```
 ## Run on Publich Datasets
 
 ###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
+
+```bash
+cd SR-LIO
+sourcr devel/setup.bash
+roslaunch sr_lio lio_nclt.launch
+```
+
+Then ppen the terminal in the path of the bag file, and type:
+
+```bash
+rosbag play XXX.bag --clock -d 1.0 -r 0.2 
+```
