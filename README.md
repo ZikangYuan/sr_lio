@@ -83,11 +83,19 @@ C. The warning message "Failed to find match for field 'time'." doesn't matter. 
 
 D. When SR-LIO is running, the estimated pose is recorded in real time in the **pose.txt** located in the **output folder**.
 
-E. If you want to get some visualization of the split and recombine, please set the **debug_output** parameter in the launch file to 1 (true). After that, you can get some .pcd files in **output/cloud_frame** and **output/cut_sweep** folders.
+E. If you want to get some visualization of the split and recombine, please set the **debug_output** parameter in the launch file to 1 (true). After that, you can get some .pcd files in **"output/cloud_frame"** and **"output/cut_sweep"** folders.
 
 F. As the groundtruth acquisition of some datasets (*UTBM* and *ULHK*) are extremely complicated, in order to facilitate evaluation, **we store the pose ground truth of the three datasets used by us in the "GT" folder**.
 
 ###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
+
+The time for finishing a sweep by the LiDAR of *NCLT* is not 100ms, but 130~140ms (around 7 Hz). Therefore, we need to package the data stream of the NCLT dataset as 7 Hz sweep packages. **The nclt_to_rosbag.py** in the **"tools"** folder can be used to package 7 Hz sweeps and linearly interpolated 100 Hz IMU data into a rosbag file:
+
+```bash
+python3 nclt_to_rosbag.py PATH_OF_NVLT_SEQUENCE_FOLDER PATH_OF_OUTPUT_BAG
+```
+
+Then, please go to the workspace of SR-LIO and type:
 
 ```bash
 cd SR-LIO
@@ -98,7 +106,7 @@ roslaunch sr_lio lio_nclt.launch
 Then open the terminal in the path of the bag file, and type:
 
 ```bash
-rosbag play XXX.bag --clock -d 1.0 -r 0.2 
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2 
 ```
 
 ### 2. Run on [*UTBM*](https://epan-utbm.github.io/utbm_robocar_dataset/#Downloads)
@@ -125,7 +133,7 @@ roslaunch sr_lio lio_utbm.launch
 Then open the terminal in the path of the bag file, and type:
 
 ```bash
-rosbag play XXX.bag --clock -d 1.0 -r 0.2 
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2 
 ```
 
 ### 3. Run on [*ULHK*](https://github.com/weisongwen/UrbanLoco)
@@ -149,7 +157,7 @@ roslaunch sr_lio lio_ulhk2.launch
 Then open the terminal in the path of the bag file, and type:
 
 ```bash
-rosbag play XXX.bag --clock -d 1.0 -r 0.2 
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2 
 ```
 
 ### 4. Adjustment of "-r" when play rosbag
