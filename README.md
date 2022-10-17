@@ -71,6 +71,18 @@ catkin_make
 ```
 ## Run on Publich Datasets
 
+Noted:
+
+A. Please make sure the LiDAR point cloud have the "ring" channel information.
+
+B. The warning message "Failed to find match for field 'time'." doesn't matter. It can be ignored.
+
+C. When SR-LIO is running, the estimated pose is recorded in real time in the **pose.txt** located in the **output folder**.
+
+D. If you want to get some visualization of the split and recombine, please set the *debug_output* parameter in the launch file to 1 (true). After that, you can get some .pcd files in *output/cloud_frame* and *output/cut_sweep* folders.
+
+以上翻译结果来自有道神经网络翻译（Y
+
 ###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
 
 ```bash
@@ -79,7 +91,7 @@ sourcr devel/setup.bash
 roslaunch sr_lio lio_nclt.launch
 ```
 
-Then ppen the terminal in the path of the bag file, and type:
+Then open the terminal in the path of the bag file, and type:
 
 ```bash
 rosbag play XXX.bag --clock -d 1.0 -r 0.2 
