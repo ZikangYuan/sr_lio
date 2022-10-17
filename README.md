@@ -81,8 +81,6 @@ C. When SR-LIO is running, the estimated pose is recorded in real time in the **
 
 D. If you want to get some visualization of the split and recombine, please set the *debug_output* parameter in the launch file to 1 (true). After that, you can get some .pcd files in *output/cloud_frame* and *output/cut_sweep* folders.
 
-以上翻译结果来自有道神经网络翻译（Y
-
 ###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
 
 ```bash
