@@ -34,6 +34,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
 3. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **SR-LIO** represents the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
 4. **SR-LIO** proposes **Multi-Segment LIO Optimization** for equally optimize all state variables during the period of a reconstructed sweep.
+5. All details about the Jacobian matrixes are available in the appendix of our article.
 
 ## Installation
 
@@ -43,7 +44,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 >
 > Cmake >= 3.0.2
 > 
-> Eigen3 >= 3.2.8
+> [Eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page) >= 3.2.8
 >
 > PCL >= 1.7
 >
