@@ -77,7 +77,7 @@ Noted:
 
 A. Except fot the external parameters between IMU and LiDAR, and the value of gravitational acceleration, **the parameter configurations used in different datasets are exactly the same** to demonstrate the stability and robustness of the SR-LIO.
 
-B. Please make sure the LiDAR point cloud have the "ring" channel information.
+B. Please make sure the LiDAR point clouds have the "ring" channel information.
 
 C. The warning message "Failed to find match for field 'time'." doesn't matter. It can be ignored.
 
