@@ -30,3 +30,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 <div align="center">
 <img src="doc/sweep_reconstruction.png" width=99% />
 </div>
+
+2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
+3. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **SR-LIO** represent the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
+4. 
