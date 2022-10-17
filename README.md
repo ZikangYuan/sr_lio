@@ -10,6 +10,4 @@
 2. We embed the proposed sweep reconstruction method into our newly designed BA based LIO system and achieve the stateof-the-art accuracy;
 
 ## Demo Video (2022-10-17 Update)
-<!-- [![Watch the video](doc/real_exp_2.png)](https://youtu.be/KYGFNe-8On4) -->
-
-https://youtu.be/KYGFNe-8On4
+<!-- [![Watch the video](doc/global.png)](https://youtu.be/KYGFNe-8On4) -->
