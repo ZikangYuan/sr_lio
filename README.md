@@ -89,7 +89,7 @@ F. As the groundtruth acquisition of some datasets (*UTBM* and *ULHK*) are extre
 
 ###  1. Run on [*NCLT*](http://robots.engin.umich.edu/nclt/)
 
-The time for finishing a sweep by the LiDAR of *NCLT* is not 100ms, but 130~140ms (around 7 Hz). Therefore, we need to package the data stream of the NCLT dataset as 7 Hz sweep packages. **The nclt_to_rosbag.py** in the **"tools"** folder can be used to package 7 Hz sweeps and linearly interpolated 100 Hz IMU data into a rosbag file:
+The time for finishing a sweep by the LiDAR of *NCLT* is not 100ms, but 130~140ms (around 7 Hz). Therefore, we need to package the data stream of the NCLT dataset as 7 Hz sweep packages. The **nclt_to_rosbag.py** in the **"tools"** folder can be used to package 7 Hz sweeps and linearly interpolated 100 Hz IMU data into a rosbag file:
 
 ```bash
 python3 nclt_to_rosbag.py PATH_OF_NVLT_SEQUENCE_FOLDER PATH_OF_OUTPUT_BAG
