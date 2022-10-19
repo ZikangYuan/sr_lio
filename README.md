@@ -53,7 +53,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 ##### Have Tested On:
 
 | OS    | GCC  | Cmake | Eigen3 | PCL | Ceres |
-| ----- | ---- | ----- | ------ | --- | ----- |
+|:-:|:-:|:-:|:-:|:-:|:-:|
 | Ubuntu 16.04 | 5.4.0  | 3.16.0 | 3.2.8 | 1.7 | 1.14 |
 | Ubuntu 18.04 | 7.5.0  | 3.11.2 | 3.3.4 | 1.8 | 1.14 |
 
