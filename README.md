@@ -1,11 +1,10 @@
 # SR-LIO
-**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is a accurate and robust LiDAR-inertial odometry (LIO) package that can adjust the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency for shortening the time period of IMU pre-integration, so as to reduce the error of IMU preintegration. The main contributions of our package are as follow:
-1. We propose a sweep reconstruction method, which can increase the frequency of spinning LiDAR sweeps and reduce the error of IMU pre-integration in LIO systems;
-2. We embed the proposed sweep reconstruction method into our newly designed BA based LIO system and achieve the stateof-the-art accuracy;
+
+**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is an accurate and robust LiDAR-inertial odometry (LIO) that can increase the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency. Such method can shorten the time period of IMU pre-integration, and thus reduce the error of IMU pre-integration. Based on the proposed sweep reconstruction method, we build our newly designed BA based LIO system and achieve the state-of-the-art accuracy.
 
 ## Related Works
 
-
+[SR-LIO: LiDAR-Inertial Odometry with Sweep Reconstruction](https://arxiv.org/abs/2210.10424)
 
 ## Demo Video (2022-10-17 Update)
 
@@ -32,7 +31,7 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
 3. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **SR-LIO** represents the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
 4. **SR-LIO** proposes **Multi-Segment LIO Optimization** for equally optimize all state variables during the period of a reconstructed sweep.
-5. All details about the Jacobian matrixes are available in the appendix of our article.
+5. All details about the Jacobian matrixes are available in the appendix of [our article](https://arxiv.org/abs/2210.10424).
 
 ## Installation
 
@@ -164,7 +163,7 @@ rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2
 
 **-r** is used to control the rosbag playback speed. For example, when we set **-r 0.2**, the playback speed of this operation is 1/5 of the original data acquisition rate. Theoretically, when the input LiDAR sweeps are reconstituted from 10 Hz to 30 Hz, we need to complete the processing of a sweep within (1000/30)ms. However, our system could not achieve such excellent computational efficiency on existing hardware platforms. By slowing down the playback of rosbag packets, we can give our system more time to process each sweep.
 
-The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the Table VII of our article to select the "-r" parameter.**
+The most significant parameters affecting the efficiency of our system are the registration times of ICP and the iteration times of each registration. Therefore, for each sequence, we test the time consumption with different number of ICP point cloud registration and different number of iteration solutions for each registration. For each test, we also record the pose accuracy (i.e., ATE) to explore how many registration and iterations are need to reach the best pose accuracy. The results are arranged in the following table. **Please refer to the Table VII of [our article](https://arxiv.org/abs/2210.10424) to select the "-r" parameter.**
 
 ## Citation
 
