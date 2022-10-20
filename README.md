@@ -6,6 +6,8 @@
 
 [SR-LIO: LiDAR-Inertial Odometry with Sweep Reconstruction](https://arxiv.org/abs/2210.10424)
 
+Authors: *Zikang Yuan*, *Fengtian Lang* and [*Xin Yang*](https://scholar.google.com/citations?user=lsz8OOYAAAAJ&hl=zh-CN)
+
 ## Demo Video (2022-10-17 Update)
 
 The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the **Resulted Global Map and Trajectory** on sequence *nclt_2013-01-10* (right). It is important to emphasize that **"x15" is the multiplier relative to the 10 Hz raw input LiDAR sweep**, not relative to the processing frequency of our system. On our currently hardware platform (**Intel Core i7-12700 and 32 GB RAM**), SR-LIO cannot run in real-time after the raw input LiDAR sweeps are reconstructed from 10 Hz to 30 Hz.
