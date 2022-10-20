@@ -1,6 +1,6 @@
 # SR-LIO
 
-**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is an accurate and robust LiDAR-inertial odometry (LIO) that can increase the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency. Such method can shorten the time period of IMU pre-integration, and thus reduce the error of IMU pre-integration. Based on the proposed sweep reconstruction method, we build our newly designed BA based LIO system and achieve the state-of-the-art accuracy.
+**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is an accurate and robust bundle adjustment (BA) based LiDAR-inertial odometry (LIO) that can increase the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency. Such method can shorten the time period of IMU pre-integration, and thus reduce the error of IMU pre-integration. Based on the proposed sweep reconstruction method, we build our newly designed BA based LIO system and achieve the state-of-the-art accuracy.
 
 ## Related Work
 
