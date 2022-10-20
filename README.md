@@ -171,6 +171,15 @@ The most significant parameters affecting the efficiency of our system are the r
 
 If you use our work in your research project, please consider citing:
 
+```
+@article{yuan2022srlio,
+  title={SR-LIO: LiDAR-Inertial Odometry with Sweep Reconstruction},
+  author={Zikang, Yuan and Fengtian, Lang and Xin, Yang},
+  journal={arXiv preprint arXiv:2210.10424},
+  year={2022}
+}
+```
+
 ## Acknowledgments
 
 Thanks for [CT-ICP](https://github.com/jedeschaud/ct_icp), [Fast-LIO](https://github.com/hku-mars/FAST_LIO), [VINs-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) and [Open-VINs](https://github.com/vell001/open_vins).
