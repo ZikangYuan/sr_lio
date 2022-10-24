@@ -172,9 +172,9 @@ The most significant parameters affecting the efficiency of our system are the r
 If you use our work in your research project, please consider citing:
 
 ```
-@article{yuan2022srlio,
+@article{yuan2022sr,
   title={SR-LIO: LiDAR-Inertial Odometry with Sweep Reconstruction},
-  author={Zikang, Yuan and Fengtian, Lang and Xin, Yang},
+  author={Yuan, Zikang and Lang, Fengtian and Yang, Xin},
   journal={arXiv preprint arXiv:2210.10424},
   year={2022}
 }
