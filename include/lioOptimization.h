@@ -190,7 +190,7 @@ private:
 
     std::queue<std::pair<double, double>> time_buffer;
     std::queue<std::vector<pcl::PointCloud<pcl::PointXYZINormal>::Ptr>> feature_buffer;
-    std::queue<std::vector<std::vector<point3D>>> lidar_buffer;
+    std::queue<std::vector<std::vector<point3D>>> lidar_buffer; //  存储重构后的单帧数据
     std::queue<sensor_msgs::Imu::ConstPtr> imu_buffer;
 
     std::vector<cloudFrame*> all_cloud_frame;

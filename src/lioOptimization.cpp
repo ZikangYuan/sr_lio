@@ -371,23 +371,23 @@ void lioOptimization::standardCloudHandler(const sensor_msgs::PointCloud2::Const
     double sample_size = index_frame < options.init_num_frames ? options.init_voxel_size : options.voxel_size;
 
     assert(msg->header.stamp.toSec() > last_time_lidar);
-    
-    std::vector<std::vector<point3D>> v_cut_sweep;
-    std::vector<double> v_dt_offset;
 
-    cloud_pro->process(msg, v_cut_sweep, v_dt_offset);
+    std::vector<std::vector<point3D>> v_cut_sweep; //    最多缓存两帧数据，分割为多个小块
+    std::vector<double> v_dt_offset;               //  分块的时间戳
+
+    cloud_pro->process(msg, v_cut_sweep, v_dt_offset); //   v_dt_offset数据等分的时间戳
 
     for(int i = 1; i < sweep_cut_num + 1; i++)
     {
 
-        std::vector<std::vector<point3D>> v_buffer_temp;
+        std::vector<std::vector<point3D>> v_buffer_temp; //  降采样，重排数据，然后组成新一帧数据
 
         for(int j = i; j < i + sweep_cut_num; j++)
         {
             std::vector<point3D> frame(v_cut_sweep[j]);
 
             boost::mt19937_64 g;
-            std::shuffle(frame.begin(), frame.end(), g);
+            std::shuffle(frame.begin(), frame.end(), g); //  随机重排容器中的元素
 
             subSampleFrame(frame, sample_size);
 
@@ -399,7 +399,7 @@ void lioOptimization::standardCloudHandler(const sensor_msgs::PointCloud2::Const
         assert(v_buffer_temp.size() == sweep_cut_num);
         lidar_buffer.push(v_buffer_temp);
 
-        time_buffer.push(std::make_pair(msg->header.stamp.toSec(), v_dt_offset[i - 1] / (double)1000.0));
+        time_buffer.push(std::make_pair(msg->header.stamp.toSec(), v_dt_offset[i - 1] / (double)1000.0)); // 用以存储新构建数据的时间戳
     }
 
     assert(msg->header.stamp.toSec() > last_time_lidar);
@@ -437,7 +437,7 @@ std::vector<std::pair<std::pair<std::vector<sensor_msgs::ImuConstPtr>, std::vect
             return measurements;
         }
 
-        if (!(imu_buffer.front()->header.stamp.toSec() < time_buffer.front().first + time_buffer.front().second))
+        if (!(imu_buffer.front()->header.stamp.toSec() < time_buffer.front().first + time_buffer.front().second)) //  IMU大于重组建激光的时间戳
         {
             time_buffer.pop();
 
@@ -450,7 +450,7 @@ std::vector<std::pair<std::pair<std::vector<sensor_msgs::ImuConstPtr>, std::vect
             continue;
         }
 
-        double timestamp = time_buffer.front().first + time_buffer.front().second;
+        double timestamp = time_buffer.front().first + time_buffer.front().second; // 重组建激光的时间戳
         double timestamp_begin = time_buffer.front().first;
         double timestamp_offset = time_buffer.front().second;
         time_buffer.pop();
@@ -471,7 +471,8 @@ std::vector<std::pair<std::pair<std::vector<sensor_msgs::ImuConstPtr>, std::vect
 
         std::vector<std::vector<point3D>> v_cut_sweep = lidar_buffer.front();
 
-        for(int i = 0; i < lidar_buffer.front().size(); i++) std::vector<point3D>().swap(lidar_buffer.front()[i]);
+        for (int i = 0; i < lidar_buffer.front().size(); i++) // 移除lidar_buffer首个数据
+            std::vector<point3D>().swap(lidar_buffer.front()[i]);
         std::vector<std::vector<point3D>>().swap(lidar_buffer.front());
         assert(lidar_buffer.front().size() == 0);
         lidar_buffer.pop();
@@ -980,7 +981,7 @@ void lioOptimization::stateEstimation(std::vector<std::vector<point3D>> &v_cut_s
 
     std::vector<point3D> const_frame;
 
-    for(int i = 0; i < v_cut_sweep.size(); i++)
+    for (int i = 0; i < v_cut_sweep.size(); i++) //  组成一帧数据
         const_frame.insert(const_frame.end(), v_cut_sweep[i].begin(), v_cut_sweep[i].end());
 
     cloudFrame *p_frame = buildFrame(const_frame, imu_pro->current_state, timestamp_begin, timestamp_offset);
@@ -1006,7 +1007,7 @@ void lioOptimization::stateEstimation(std::vector<std::vector<point3D>> &v_cut_s
     std::cout << "translation_end: " << p_frame->p_state->translation.x() << " " << p_frame->p_state->translation.y() << " " << p_frame->p_state->translation.z() << std::endl;
 
     imu_pro->last_state = imu_pro->current_state;
-    imu_pro->current_state = new state(imu_pro->last_state, false);
+    imu_pro->current_state = new state(imu_pro->last_state, false); //   重置状态量
 
     publish_odometry(pub_odom,p_frame);
     publish_path(pub_path,p_frame);   
