@@ -38,6 +38,10 @@ bool time_list(point3D &point_1, point3D &point_2);
 
 bool time_list_velodyne(velodyne_ros::Point &point_1, velodyne_ros::Point &point_2);
 
+bool time_list_ouster(ouster_ros::Point &point_1, ouster_ros::Point &point_2);
+
+bool time_list_robosense(robosense_ros::Point &point_1, robosense_ros::Point &point_2);
+
 void point3DtoPCL(std::vector<point3D> &v_point_temp, pcl::PointCloud<pcl::PointXYZINormal>::Ptr &p_cloud_temp);
 
 Eigen::Matrix3d mat33FromArray(std::vector<double> &array);

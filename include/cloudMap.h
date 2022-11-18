@@ -18,8 +18,8 @@ struct point3D {
 
     Eigen::Vector3d raw_point;
     Eigen::Vector3d point;
-    double alpha_time = 0.0;
-    double relative_time = 0.0;
+    double alpha_time = 0.0;    //  reference to last point of current frame
+    double relative_time = 0.0; //  feference to current frame
     double timestamp = 0.0;
     int index_frame = -1;
 
