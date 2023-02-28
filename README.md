@@ -25,15 +25,8 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 </div>
 
 **New Features:**
-1. The proposed **Sweep Reconstruction** module splits the original sweep packet into continuous point cloud data streams, and then re-packages point cloud data streams in a multiplexing way to obtain sweeps with higher frequency, which is **illustrated by the figure as follow**:
-<div align="center">
-<img src="doc/sweep_reconstruction.png" width=99% />
-</div>
-
-2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
-3. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **SR-LIO** represents the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
-4. **SR-LIO** proposes **Multi-Segment LIO Optimization** for equally optimize all state variables during the period of a reconstructed sweep.
-5. All details about the Jacobian matrixes are available in the appendix of [our article](https://arxiv.org/abs/2210.10424).
+1. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **LIW-OAM** represents the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
+2. Following [SR-LIO](https://arxiv.org/abs/2210.10424), **LIW-OAM** uses BA-based joint optimization framework, which is different from most EKF based systems.
 
 ## Installation
 
@@ -61,14 +54,14 @@ The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the 
 ### 2. Create ROS workspace
 
 ```bash
-mkdir -p ~/SR-LIO/src
-cd SR-LIO/src
+mkdir -p ~/LIW-OAM/src
+cd LIW-OAM/src
 ```
 
 ### 3. Clone the directory and build
 
 ```bash
-git clone https://github.com/ZikangYuan/sr_lio.git
+git clone https://github.com/ZikangYuan/liw_oam.git
 cd ..
 catkin_make
 ```
