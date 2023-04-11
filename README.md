@@ -72,6 +72,7 @@ git clone https://github.com/ZikangYuan/sr_lio.git
 cd ..
 catkin_make
 ```
+
 ## Run on Public Datasets
 
 Noted:
