@@ -101,7 +101,7 @@ Then, please go to the workspace of SR-LIO and type:
 
 ```bash
 cd SR-LIO
-sourcr devel/setup.bash
+source devel/setup.bash
 roslaunch sr_lio lio_nclt.launch
 ```
 
@@ -128,7 +128,7 @@ sudo apt-get install ros-melodic-velodyne
 Then open the terminal in the path of SR-LIO, and type:
 
 ```bash
-sourcr devel/setup.bash
+source devel/setup.bash
 roslaunch sr_lio lio_utbm.launch
 ```
 
@@ -145,7 +145,7 @@ For sequence *HK-Data-2019-01-17* and *HK-Data-2019-03-17*, the imu data does no
 If you test SR-LIO on *HK-Data-2019-01-17* or *HK-Data-2019-03-17*, please type:
 
 ```bash
-sourcr devel/setup.bash
+source devel/setup.bash
 roslaunch sr_lio lio_ulhk1.launch
 ```
 
