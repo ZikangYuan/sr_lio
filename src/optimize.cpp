@@ -481,8 +481,11 @@ optimizeSummary lioOptimization::optimizeByAnalyticLio(const icpOptions &cur_icp
 
                 break;
             case POINT_TO_PLANE:
+                problem.AddParameterBlock(&begin_quat.x(), 4, parameterization);
                 problem.AddParameterBlock(&end_quat.x(), 4, parameterization);
+                problem.AddParameterBlock(&begin_t.x(), 3);
                 problem.AddParameterBlock(&end_t.x(), 3);
+                problem.AddParameterBlock(&begin_velocity_bias[0], 9);
                 problem.AddParameterBlock(&end_velocity_bias[0], 9);
                 break;
         }
@@ -615,8 +618,18 @@ optimizeSummary lioOptimization::optimizeByAnalyticLio(const icpOptions &cur_icp
                 }
                 case POINT_TO_PLANE:
                 {
-                    ImuFactor* imu_factor = new ImuFactor(p_frame->p_state->pre_integration, all_cloud_frame[p_frame->id - 1]->p_state);
-                    problem.AddResidualBlock(imu_factor, nullptr, &end_t.x(), &end_quat.x(), &end_velocity_bias[0]);
+                    CTImuFactor* imu_factor = new CTImuFactor(p_frame->p_state->pre_integration, 1);
+                    problem.AddResidualBlock(imu_factor, loss_function, &begin_t.x(), &begin_quat.x(), &begin_velocity_bias[0],  &end_t.x(), &end_quat.x(), &end_velocity_bias[0]);
+
+                    LocationConsistencyFactor *cost_location_consistency = new LocationConsistencyFactor(previous_translation, sqrt(num_residuals * cur_icp_options.beta_location_consistency * laser_point_cov));
+                    problem.AddResidualBlock(cost_location_consistency, nullptr, &begin_t.x());
+
+                    RotationConsistencyFactor *cost_rotation_consistency = new RotationConsistencyFactor(previous_orientation, sqrt(num_residuals * cur_icp_options.beta_orientation_consistency * laser_point_cov));
+                    problem.AddResidualBlock(cost_rotation_consistency, nullptr, &begin_quat.x());
+
+                    VelocityConsistencyFactor *cost_velocity_consistency = new VelocityConsistencyFactor(all_cloud_frame[p_frame->id - sweep_cut_num]->p_state, sqrt(num_residuals * cur_icp_options.beta_constant_velocity * laser_point_cov));
+                    problem.AddResidualBlock(cost_velocity_consistency, nullptr, &begin_velocity_bias[0]);
+                    
                     break;
                 }
             }
