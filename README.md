@@ -185,4 +185,4 @@ If you use our work in your research project, please consider citing:
 
 Thanks for [CT-ICP](https://github.com/jedeschaud/ct_icp), [Fast-LIO](https://github.com/hku-mars/FAST_LIO), [VINs-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) and [Open-VINs](https://github.com/vell001/open_vins).
 
-Thanks for @chengwei for solving the problem that SR-LIO cannot run successfully under the specific mode (motion_compensation: CONSTANT_VELOCITY, distance: POINT_TO_PLANE).
+Thanks for [**chengwei**](https://github.com/chengwei0427) for solving the problem that SR-LIO cannot run successfully under the specific mode (motion_compensation: CONSTANT_VELOCITY, distance: POINT_TO_PLANE).
