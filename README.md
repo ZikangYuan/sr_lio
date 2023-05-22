@@ -77,13 +77,13 @@ catkin_make
 
 Noted:
 
-A. Except fot the external parameters between IMU and LiDAR, and the value of gravitational acceleration, **the parameter configurations used in different datasets are exactly the same** to demonstrate the stability and robustness of the SR-LIO.
+A. Except fot the external parameters between IMU and LiDAR, and the value of gravitational acceleration, **the parameter configurations used in different datasets are exactly the same** to demonstrate the stability and robustness of **SR-LIO**.
 
 B. Please make sure the LiDAR point clouds have the "ring" channel information.
 
 C. The warning message "Failed to find match for field 'time'." doesn't matter. It can be ignored.
 
-D. **Please create a folder named "output" before running.** When SR-LIO is running, the estimated pose is recorded in real time in the **pose.txt** located in the **output folder**.
+D. **Please create a folder named "output" before running.** When **SR-LIO** is running, the estimated pose is recorded in real time in the **pose.txt** located in the **output folder**.
 
 E. If you want to get some visualization of the split and recombine, please set the **debug_output** parameter in the launch file to 1 (true). After that, you can get some .pcd files in **"output/cloud_frame"** and **"output/cut_sweep"** folders.
 
