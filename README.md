@@ -97,7 +97,7 @@ The time for finishing a sweep by the LiDAR of *NCLT* is not 100ms, but 130~140m
 python3 nclt_to_rosbag.py PATH_OF_NVLT_SEQUENCE_FOLDER PATH_OF_OUTPUT_BAG
 ```
 
-Then, please go to the workspace of SR-LIO and type:
+Then, please go to the workspace of **SR-LIO** and type:
 
 ```bash
 cd SR-LIO
@@ -142,14 +142,14 @@ rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2
 
 For sequence *HK-Data-2019-01-17* and *HK-Data-2019-03-17*, the imu data does not include the gravity acceleration component, and the topic of LiDAR point cloud data is */velodyne_points_0*. For other sequences of *ULHK* used by us, the imu data includes the gravity acceleration component, and the topic of LiDAR point cloud data is */velodyne_points*. Therefore, we provide two launch files for the *ULHK* dataset.
 
-If you test SR-LIO on *HK-Data-2019-01-17* or *HK-Data-2019-03-17*, please type:
+If you test **SR-LIO** on *HK-Data-2019-01-17* or *HK-Data-2019-03-17*, please type:
 
 ```bash
 source devel/setup.bash
 roslaunch sr_lio lio_ulhk1.launch
 ```
 
-If you test SR-LIO on *HK-Data-2019-03-16-1*, *HK-Data-2019-04-26-1* or *HK-Data-2019-04-26-2*, please type:
+If you test **SR-LIO** on *HK-Data-2019-03-16-1*, *HK-Data-2019-04-26-1* or *HK-Data-2019-04-26-2*, please type:
 
 ```bash
 sourcr devel/setup.bash
