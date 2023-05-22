@@ -125,7 +125,7 @@ If your OS are Ubuntu 18.04, please type:
 sudo apt-get install ros-melodic-velodyne 
 ```
 
-Then open the terminal in the path of SR-LIO, and type:
+Then open the terminal in the path of **SR-LIO**, and type:
 
 ```bash
 source devel/setup.bash
