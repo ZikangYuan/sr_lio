@@ -10,7 +10,7 @@ Authors: [*Zikang Yuan*](https://scholar.google.com/citations?hl=zh-CN&user=acxd
 
 **Pipeline:**
 <div align="center">
-<img src="doc/system_framework.png" width=99% />
+<img src="doc/system_framework.png" width=50% />
 </div>
 
 **New Features:**
