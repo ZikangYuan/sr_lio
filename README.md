@@ -10,13 +10,13 @@ Authors: [*Zikang Yuan*](https://scholar.google.com/citations?hl=zh-CN&user=acxd
 
 **Pipeline:**
 <div align="center">
-<img src="doc/system_framework.png" width=50% />
+<img src="doc/system_framework.png" width=45% />
 </div>
 
 **New Features:**
 1. The proposed **Sweep Reconstruction** module splits the original sweep packet into continuous point cloud data streams, and then re-packages point cloud data streams in a multiplexing way to obtain sweeps with higher frequency, which is **illustrated by the figure as follow**:
 <div align="center">
-<img src="doc/sweep_reconstruction.png" width=99% />
+<img src="doc/local-1.png" width=99% />
 </div>
 
 2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
