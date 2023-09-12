@@ -8,17 +8,6 @@
 
 Authors: [*Zikang Yuan*](https://scholar.google.com/citations?hl=zh-CN&user=acxdM9gAAAAJ), [*Fengtian Lang*](https://scholar.google.com/citations?hl=zh-CN&user=zwgGSkEAAAAJ&view_op=list_works&gmla=ABEO0Yrl4-YPuowyntSYyCW760yxM5-IWkF8FGV4t9bs9qz1oWrqnlHmPdbt7LMcMDc04kl2puqRR4FaZvaCUONsX7MQhuAC6a--VS2pTsuwj-CyKgWp3iWDP2TS0I__Zui5da4), *Tianle Xu* and [*Xin Yang*](https://scholar.google.com/citations?user=lsz8OOYAAAAJ&hl=zh-CN)
 
-## Demo Video (2022-10-17 Update)
-
-The **x15 Real-Time Performance** on sequence *nclt_2013-01-10* (left), and the **Resulted Global Map and Trajectory** on sequence *nclt_2013-01-10* (right). It is important to emphasize that **"x15" is the multiplier relative to the 10 Hz raw input LiDAR sweep**, not relative to the processing frequency of our system. On our currently hardware platform (**Intel Core i7-12700 and 32 GB RAM**), **SR-LIO** cannot run in real-time after the raw input LiDAR sweeps are reconstructed from 10 Hz to 30 Hz.
-
-<div align="left">
-<img src="doc/running.gif" width=49.6% />
-<img src="doc/result.gif" width = 49.6% >
-</div>
-
-**Related video:**: [Real-Time Performance](https://youtu.be/KYGFNe-8On4), [Global Map and Trajectory](https://youtu.be/7XpBDc41uUA)
-
 **Pipeline:**
 <div align="center">
 <img src="doc/framework-sr_lio.png" width=99% />
