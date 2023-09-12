@@ -19,10 +19,8 @@ Authors: [*Zikang Yuan*](https://scholar.google.com/citations?hl=zh-CN&user=acxd
 <img src="doc/sweep-reconstruction.png" width=55% />
 </div>
 
-2. **Sweep Reconstruction** can effectively reduce the time interval for each IMU pre-integration, reducing the IMU pre-integration error and enabling the usage of BA based LiDAR-inertial optimization.
-3. Following [CT-ICP](https://github.com/jedeschaud/ct_icp), **SR-LIO** represents the state of two moments in each sweep: 1) at the beginning time of a sweep, and 2) at the end time of the sweep.
-4. **SR-LIO** proposes **Multi-Segment LIO Optimization** for equally optimize all state variables during the period of a reconstructed sweep.
-5. All details about the Jacobian matrixes are available in the appendix of [our article](https://arxiv.org/abs/2210.10424).
+2. **Sweep Reconstruction** can effectively reduce the accumulative error of predicted state by reducing the time interval of IMU measurements integration for iEKF based LIO systems by using highfrequent reconstructed sweeps and in turn achieve more accurate and robust state estimation results.
+3. **SR-LIO** proposes **Performing distortion correction for each segment** to prevent inaccurate trajectory caused by multiple inconsistent distortion correction to a particular point.
 
 ## Installation
 
@@ -97,7 +95,7 @@ roslaunch sr_lio lio_nclt.launch
 Then open the terminal in the path of the bag file, and type:
 
 ```bash
-rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2 
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0
 ```
 
 ### 2. Run on [*UTBM*](https://epan-utbm.github.io/utbm_robocar_dataset/#Downloads)
@@ -124,7 +122,7 @@ roslaunch sr_lio lio_utbm.launch
 Then open the terminal in the path of the bag file, and type:
 
 ```bash
-rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2 
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0
 ```
 
 ### 3. Run on [*ULHK*](https://github.com/weisongwen/UrbanLoco)
@@ -148,7 +146,26 @@ roslaunch sr_lio lio_ulhk2.launch
 Then open the terminal in the path of the bag file, and type:
 
 ```bash
-rosbag play SEQUENCE_NAME.bag --clock -d 1.0 -r 0.2 
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0
+```
+
+### 4. Run on [*KAIST*](https://sites.google.com/view/complex-urban-dataset)
+
+For point clouds, we utilize the data from both two 3D LiDARs of *KAIST*. Users can package the rosbag according to the tool [kaist2bag](https://github.com/ZikangYuan/kaist2bag). The partial test sequences of *KAIST* used by us can also be downloaded from [Google drive](https://drive.google.com/drive/folders/1upQuR9cWoawM6MuPYxSpPQPlRLK7sDWU). 
+
+Chinese users can download the test sequences of *KAIST* form [baidu yun](https://pan.baidu.com/s/1vrat2HdTf6NBrjw_kGCZNw), while the password is **s4bw**.
+
+Please go to the workspace of **SR-LIO** and type:
+
+```bash
+source devel/setup.bash
+roslaunch sr_lio lio_kaist.launch
+```
+
+Then open the terminal in the path of the bag file, and type:
+
+```bash
+rosbag play SEQUENCE_NAME.bag --clock -d 1.0
 ```
 
 ### 4. Adjustment of "-r" when play rosbag
@@ -173,5 +190,3 @@ If you use our work in your research project, please consider citing:
 ## Acknowledgments
 
 Thanks for [CT-ICP](https://github.com/jedeschaud/ct_icp), [Fast-LIO](https://github.com/hku-mars/FAST_LIO), [VINs-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) and [Open-VINs](https://github.com/vell001/open_vins).
-
-Thanks for [**chengwei**](https://github.com/chengwei0427) for solving the problem that SR-LIO cannot run successfully under the specific mode (motion_compensation: CONSTANT_VELOCITY, distance: POINT_TO_PLANE).
