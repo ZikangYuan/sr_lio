@@ -67,11 +67,8 @@ add_executable(lio_optimization
 		src/lioOptimization.cpp
 		src/optimize.cpp
 		src/cloudProcessing.cpp 
-		src/imuProcessing.cpp 
-		src/initialization.cpp 
+		src/state.cpp
+		src/eskfEstimator.cpp
 		src/utility.cpp
-		src/parameters.cpp
-		src/poseParameterization.cpp 
-		src/lidarFactor.cpp
-		src/imuFactor.cpp)
+		src/parameters.cpp)
 target_link_libraries(lio_optimization ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES} robin_map)
