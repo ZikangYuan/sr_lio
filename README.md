@@ -1,6 +1,6 @@
-# SR-LIO 2.0
+# SR-LIO
 
-**SR-LIO 2.0** (LiDAR-Inertial Odometry with Sweep Reconstruction) is an accurate and robust iterated extended Kalman filter (iEKF) based LiDAR-inertial odometry (LIO) that can increase the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency. Such method can reduce the accumulative error of predicted state by reducing the time interval of IMU measurements integration for iEKF based LIO systems by using highfrequent reconstructed sweeps and in turn achieve more accurate and robust state estimation results. **Comapred with the SR-LIO 1.0, SR-LIO 2.0 can run in real time.**
+**SR-LIO** (LiDAR-Inertial Odometry with Sweep Reconstruction) is an accurate and robust iterated extended Kalman filter (iEKF) based LiDAR-inertial odometry (LIO) that can increase the execution frequency beyond the sweep frequency. It segments and reconstructs raw input sweeps from spinning LiDAR to obtain reconstructed sweeps with higher frequency. Such method can reduce the accumulative error of predicted state by reducing the time interval of IMU measurements integration for iEKF based LIO systems by using highfrequent reconstructed sweeps and in turn achieve more accurate and robust state estimation results.
 
 ## Related Work
 
