@@ -2,7 +2,7 @@ common:
     lidar_topic:  "/rslidar_points"
     imu_topic:  "/gps/gtimu"
     point_filter_num: 1
-    sweep_cut_num: 1
+    sweep_cut_num: 2
     time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
     gravity_acc: [ 0.0, 0.0, 9.80416]
     
@@ -53,3 +53,4 @@ icp_options:
     num_closest_neighbors: 1
     min_num_residuals: 200 # The minimum number of residuals for a valid ICP problem
     max_num_residuals: 600 # The maximum number of residuals considered (if more keypoints exist, residuals are randomly sampled)
+
