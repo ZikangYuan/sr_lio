@@ -2,7 +2,7 @@ common:
     lidar_topic:  "/points_raw"
     imu_topic:  "/imu_raw"
     point_filter_num: 4
-    sweep_cut_num: 1
+    sweep_cut_num: 2
     time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
     gravity_acc: [ 0.0, 0.0, 9.80416]
     
